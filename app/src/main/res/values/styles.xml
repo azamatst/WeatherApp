@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="date_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/barlow</item>
+        <item name="android:textSize">@dimen/tv_date</item>
+        <item name="android:textColor">@color/black_200</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="tv_status_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/barlow_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="linear_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="tv_degree_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/tv_degree_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/barlow_regular</item>
+    </style>
+
+    <style name="tv_title_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/barlow</item>
+        <item name="android:textColor">@color/black_700</item>
+    </style>
+
+    <style name="tv_sub_title_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black_100</item>
+        <item name="android:fontFamily">@font/barlow</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textSize">@dimen/tv_sub_title_sp</item>
+    </style>
+</resources>

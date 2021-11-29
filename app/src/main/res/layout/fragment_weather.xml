@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_weather"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height"
+        android:contentDescription="@string/image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_day" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cont_all_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="260dp"
+        android:background="@drawable/bg_layout">
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/date_style"
+            android:paddingStart="20dp"
+            android:text="Sunday, 19 May 2019  |  4:30PM"
+            app:layout_constraintBottom_toBottomOf="@id/locations"
+            app:layout_constraintEnd_toStartOf="@id/locations"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/locations"
+            android:layout_width="155dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_location_layout"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_date"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/barlow"
+                android:text="Mumbai, India"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/tv_title" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/location"
+                android:src="@drawable/ic_location" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            style="@style/linear_style"
+            app:layout_constraintBottom_toTopOf="@id/linear4"
+            app:layout_constraintEnd_toStartOf="@id/linear2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locations">
+
+            <ImageView
+                android:id="@+id/iv_status"
+                android:layout_width="@dimen/iv_status_width"
+                android:layout_height="@dimen/tv_status_height"
+                android:src="@drawable/ic_cloudy" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                style="@style/tv_status_style"
+                android:layout_marginTop="8dp"
+                android:text="Sunny" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear2"
+            style="@style/linear_style"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/linear4"
+            app:layout_constraintEnd_toStartOf="@id/linear3"
+            app:layout_constraintStart_toEndOf="@id/linear1"
+            app:layout_constraintTop_toBottomOf="@id/locations">
+
+            <TextView
+                android:id="@+id/tv_degree"
+                style="@style/tv_degree_style"
+                android:layout_marginStart="12dp"
+                android:text="33" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:text="°C"
+                android:textColor="@color/black_200"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear3"
+            style="@style/linear_style"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/linear4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/linear2"
+            app:layout_constraintTop_toBottomOf="@id/locations">
+
+            <TextView
+                android:id="@+id/tv_deg_up"
+                style="@style/tv_title_style"
+                android:text="@string/deg_up"
+                android:textColor="@color/black_200" />
+
+            <TextView
+                android:id="@+id/tv_deg_down"
+                style="@style/tv_title_style"
+                android:layout_marginTop="@dimen/tv_margin_top"
+                android:text="@string/deg_down" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear4"
+            style="@style/linear_style"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/linear7"
+            app:layout_constraintEnd_toStartOf="@id/linear5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear1">
+
+            <ImageView
+                android:layout_width="@dimen/iv_width"
+                android:layout_height="@dimen/iv_height"
+                android:src="@drawable/ic_humedity" />
+
+            <TextView
+                android:id="@+id/tv_humidity"
+                style="@style/tv_title_style"
+                android:layout_marginTop="@dimen/tv_margin_top"
+                android:text="37%" />
+
+            <TextView
+                style="@style/tv_sub_title_style"
+                android:text="@string/humidity" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear5"
+            style="@style/linear_style"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/linear7"
+            app:layout_constraintEnd_toStartOf="@id/linear6"
+            app:layout_constraintStart_toEndOf="@id/linear4"
+            app:layout_constraintTop_toBottomOf="@id/linear1">
+
+            <ImageView
+                android:layout_width="@dimen/iv_width"
+                android:layout_height="@dimen/iv_height"
+                android:src="@drawable/ic_pressure" />
+
+            <TextView
+                android:id="@+id/tv_pressure"
+                style="@style/tv_title_style"
+                android:layout_marginTop="@dimen/tv_margin_top"
+                android:text="1,007mBar" />
+
+            <TextView
+                style="@style/tv_sub_title_style"
+                android:text="@string/pressure" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear6"
+            style="@style/linear_style"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/linear7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/linear5"
+            app:layout_constraintTop_toBottomOf="@id/linear1">
+
+            <ImageView
+                android:layout_width="@dimen/iv_width"
+                android:layout_height="@dimen/iv_height"
+                android:src="@drawable/ic_wind" />
+
+            <TextView
+                android:id="@+id/tv_wind"
+                style="@style/tv_title_style"
+                android:layout_marginTop="@dimen/tv_margin_top"
+                android:text="23km/h" />
+
+            <TextView
+                style="@style/tv_sub_title_style"
+                android:text="@string/wind" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear7"
+            style="@style/linear_style"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/rv"
+            app:layout_constraintEnd_toStartOf="@id/linear8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear4">
+
+            <ImageView
+                android:layout_width="@dimen/iv_width"
+                android:layout_height="@dimen/iv_height"
+                android:src="@drawable/ic_sunrise" />
+
+            <TextView
+                android:id="@+id/tv_sunrise"
+                style="@style/tv_title_style"
+                android:layout_marginTop="@dimen/tv_margin_top"
+                android:text="6:03 AM" />
+
+            <TextView
+                style="@style/tv_sub_title_style"
+                android:text="@string/sunrise" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear8"
+            style="@style/linear_style"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/rv"
+            app:layout_constraintEnd_toStartOf="@id/linear9"
+            app:layout_constraintStart_toEndOf="@id/linear7"
+            app:layout_constraintTop_toBottomOf="@id/linear4">
+
+            <ImageView
+                android:layout_width="@dimen/iv_width"
+                android:layout_height="@dimen/iv_height"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_sunset" />
+
+            <TextView
+                android:id="@+id/tv_sunset"
+                style="@style/tv_title_style"
+                android:layout_marginTop="@dimen/tv_margin_top"
+                android:text="@string/_7_05_pm" />
+
+            <TextView
+                style="@style/tv_sub_title_style"
+                android:text="@string/sunset" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear9"
+            style="@style/linear_style"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/rv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/linear8"
+            app:layout_constraintTop_toBottomOf="@id/linear4">
+
+            <ImageView
+                android:layout_width="@dimen/iv_width"
+                android:layout_height="@dimen/iv_height"
+                android:src="@drawable/ic_day_time" />
+
+            <TextView
+                android:id="@+id/tv_day_time"
+                style="@style/tv_title_style"
+                android:layout_marginTop="@dimen/tv_margin_top"
+                android:text="@string/_13h_1m" />
+
+            <TextView
+                style="@style/tv_sub_title_style"
+                android:text="@string/day_time" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear7"
+            tools:listitem="@layout/week_item" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_layout"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:text="Location"
+            android:textSize="24dp" />
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

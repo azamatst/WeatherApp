@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_height">300dp</dimen>
+    <dimen name="tv_date">14sp</dimen>
+    <dimen name="tv_title">16dp</dimen>
+    <dimen name="iv_status_width">40dp</dimen>
+    <dimen name="tv_status_height">30dp</dimen>
+    <dimen name="tv_degree_size">64sp</dimen>
+    <dimen name="tv_margin_top">12dp</dimen>
+    <dimen name="iv_width">24sp</dimen>
+    <dimen name="iv_height">24sp</dimen>
+    <dimen name="tv_sub_title_sp">8sp</dimen>
+</resources>
