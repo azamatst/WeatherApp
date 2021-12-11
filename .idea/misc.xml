@@ -19,7 +19,8 @@
         <entry key="..\:/Users/TechLine/AndroidStudioProjects/WeatherApp2/app/src/main/res/drawable/ic_wind.xml" value="0.1" />
         <entry key="..\:/Users/TechLine/AndroidStudioProjects/WeatherApp2/app/src/main/res/drawable/ic_windy.xml" value="0.1" />
         <entry key="..\:/Users/TechLine/AndroidStudioProjects/WeatherApp2/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/TechLine/AndroidStudioProjects/WeatherApp2/app/src/main/res/layout/fragment_weather.xml" value="0.25" />
+        <entry key="..\:/Users/TechLine/AndroidStudioProjects/WeatherApp2/app/src/main/res/layout/fragment_city.xml" value="0.25" />
+        <entry key="..\:/Users/TechLine/AndroidStudioProjects/WeatherApp2/app/src/main/res/layout/fragment_weather.xml" value="0.2" />
         <entry key="..\:/Users/TechLine/AndroidStudioProjects/WeatherApp2/app/src/main/res/layout/week_item.xml" value="0.25" />
       </map>
     </option>

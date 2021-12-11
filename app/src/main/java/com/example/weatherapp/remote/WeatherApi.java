@@ -10,8 +10,7 @@ public interface WeatherApi {
 
     @GET("weather")
     Call<CurrentWeather> getCurrentWeather(
-            @Query("q") String cityName,
-            @Query("appid") String cityId
+            @Query("q") String cityName
     );
 
 

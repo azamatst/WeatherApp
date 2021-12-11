@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/weatherFragment">
+    app:startDestination="@id/weather_fragment">
 
     <fragment
-        android:id="@+id/weatherFragment"
+        android:id="@+id/weather_fragment"
         android:name="com.example.weatherapp.ui.WeatherFragment"
-        android:label="WeatherFragment" />
+        android:label="WeatherFragment"
+        tools:layout="@layout/fragment_weather">
+
+        <argument
+            android:name="cityId"
+            app:argType="string"
+            android:defaultValue="Введите имя города"
+            app:nullable="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/city_fragment"
+        android:name="com.example.weatherapp.CityFragment"
+        android:label="fragment_city"
+        tools:layout="@layout/fragment_city">
+        <action
+            android:id="@+id/action_weatherFragment_to_cityFragment"
+            app:destination="@id/weather_fragment">
+
+            <argument
+                android:name="cityId"
+                app:argType="string"
+                app:nullable="true" />
+
+        </action>
+    </fragment>
 </navigation>

@@ -14,7 +14,7 @@ public class CurrentWeather {
     @SerializedName("base")
     private String base;
     @SerializedName("main")
-    private Main main;
+    private Main temp;
     @SerializedName("visibility")
     private Integer visibility;
     @SerializedName("wind")
@@ -58,12 +58,12 @@ public class CurrentWeather {
         this.base = base;
     }
 
-    public Main getMain() {
-        return main;
+    public Main getTemp() {
+        return temp;
     }
 
-    public void setMain(Main main) {
-        this.main = main;
+    public void setTemp(Main temp) {
+        this.temp = temp;
     }
 
     public Integer getVisibility() {
